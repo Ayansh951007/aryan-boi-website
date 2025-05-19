@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aryan Boi</title>
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* Navbar Styles */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(20, 20, 20, 0.95);
+      padding: 0.8rem 2rem;
+      display: flex;
+      justify-content: center;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    nav a {
+      color: #ccc;
+      margin: 0 1.5rem;
+      text-decoration: none;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: white;
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #000;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      color: white;
+      opacity: 0;
+      animation: fadeInCenter 2s ease-out forwards;
+    }
+
+    .content-section {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease, transform 1s ease;
+      padding: 4rem 2rem;
+      border-bottom: 1px solid #333;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .content-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      color: #eee;
+      margin-bottom: 1rem;
+    }
+
+    .bio, .contact {
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    .contact i {
+      color: #ccc;
+      margin-right: 10px;
+    }
+
+    .photos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .photos img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 12px;
+      border: 2px solid #444;
+      transition: transform 0.3s ease;
+    }
+
+    .photos img:hover {
+      transform: scale(1.03);
+    }
+
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 1rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeInCenter {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav a {
+        margin: 0.5rem 0;
+      }
+      .photos {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /* Spacer for fixed nav */
+    .spacer {
+      height: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="#bio">Bio</a>
+    <a href="#phone">Phone</a>
+    <a href="#photos">Photos</a>
+  </nav>
+
+  <div class="spacer"></div> <!-- Prevent nav from overlapping content -->
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Aryan</h1>
+  </div>
+
+  <!-- Content Sections -->
+  <section class="content-section" id="bio">
+    <h2>Bio</h2>
+    <div class="bio">
+    <p>Aryan is a boy (very doubtable but anyways). He studies in Chinmaya Vidyalaya, Class- 12 F . Don't fall prey to his cuteness, he might appear harmless but beware he is the biggest, most worst , most diabolical molester the world has ever seen. If you go close to him there's a 99% chance you will get molested. If you think you can reverse molest him then you are very wrong...... he is immune. He molests on a multispecies level, not only humans , innocent animals and insects get molested too. If you see him at night and he is aware of your presence .... then mind me -YOU CAN'T RUN .... the only thing you can do is PRAY.... cause you are already COOKED.</p>
+    </div>
+  </section>
+
+  <section class="content-section" id="phone">
+    <h2>Phone Number</h2>
+    <div class="contact">
+      <p><i class="fas fa-phone-alt"></i><strong>+91-9123252442</strong></p>
+    </div>
+  </section>
+
+  <section class="content-section" id="photos">
+    <h2>Photos</h2>
+    <div class="photos">
+      <img src="pic1.jpg" alt="Aryan Photo 1">
+      <img src="pic2.jpg" alt="Aryan Photo 2">
+      <img src="pic3.JPG" alt="Aryan Photo 3">
+    </div>
+  </section>
+
+  <footer class="content-section">
+    © 2025 Aryan. All rights reserved.
+  </footer>
+
+  <script>
+    // Reveal content on scroll
+    const sections = document.querySelectorAll('.content-section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+
+</body>
+</html>
